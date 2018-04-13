@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Agenda Electrónica</ion-title>
+  </ion-navbar>
+
+  <ion-navbar>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="onLoadNewPage()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>Tareas Pendientes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let tarea of tareas$ | async" (click)="onItemTappedtarea($event, tareap)">
+     <p><strong>Evento: </strong>{{tarea.Evento}}</p> 
+     <p><strong>Fecha: </strong>{{tarea.Fecha}}</p>
+     <p><strong>Lugar: </strong>{{tarea.Lugar}}</p>
+     <p><strong>Prioridad: </strong>{{tarea.Prioridad}}</p>
+    </button>
+    
+  </ion-list>
+</ion-content>
